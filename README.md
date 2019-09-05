@@ -1,9 +1,27 @@
-# Cargo-Optimization-Minizinc
-A multidimensional knapsack problem, implemented in Minizinc.
+# Cargo Optimization Minizinc
+An advanced application of the knapsack problem, implemented in Minizinc.
 
-<h3>Team Members</h3>
+<h2>Tools used</h2>
+<ul>
+  <li> MiniZinc 2.2.3 </li>
+</ul>
+
+<h2>Team Members</h2>
 <ul>
   <li> Mashrur Mahmud</li>
   <li> Hasan Tanvir Iqbal</li>
   <li> Farhan M Nafis Momin</li>
   </ul>
+  
+<h2>Problem Versions</h2>
+
+<h3> Version 1: </h3> 
+<p>A single carrier is available, providing constraints 'carrier_space' and 'carrier_weight_limit'. A certain number of items are required to be transported. Items are defined by three properties: {value, weight, volume}. The goal is to maximize total value, considering space and weight constraints.</p>
+
+<h3> Version 2: </h3>
+<p>A number of carriers are available, each having its own space and weight limit. A certain number of items require transportation. Items are defined by four properties: {value, weight, volume, carrier_index}. The goal is to maximize total value, by assigning items to carriers optimally, under weight and space constraints of those individual carriers.</p>
+
+<h3> Version 3: </h3>
+<p> The concept of destinations is introduced. Multiple destinations are available. Each item needs to be delivered to its own destination. Path costs between different locations are given. The goal is to pick items in a way such that, (total item value - travel cost) is maximized. </p>
+
+
