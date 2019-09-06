@@ -24,4 +24,7 @@ An advanced application of the knapsack problem, implemented in Minizinc.
 <h3> Version 3: </h3>
 <p> The concept of destinations is introduced. Multiple destinations are available. Each item needs to be delivered to its own destination. Path costs between different locations are given. The goal is to pick items in a way such that, (total item value - travel cost) is maximized. </p>
 
+<h3> Version 4: </h3>
+<p> The concept of delay time is introduced. In all previous scenarios, an item which is sub-optimal in terms of value vs other costs would remain unchosen across many iterations as long as better items are available. However, the delay or waiting time of an item is now factored into the cost function. An item which has been waiting too long will result in an overall bad solution. So, delay cost provides a scheduling effect on the problem scenario.</p>
+
 
