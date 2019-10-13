@@ -1,30 +1,44 @@
-# Cargo Optimization Minizinc
+# Cargo Optimization
 An advanced application of the knapsack problem, implemented in Minizinc.
 
-<h2>Tools used</h2>
-<ul>
-  <li> MiniZinc 2.2.3 </li>
-</ul>
+## Tools used:
 
-<h2>Team Members</h2>
-<ul>
-  <li> Mashrur Mahmud</li>
-  <li> Hasan Tanvir Iqbal</li>
-  <li> Farhan M Nafis Momin</li>
-  </ul>
-  
-<h2>Problem Versions</h2>
+* MiniZinc 2.2.3
 
-<h3> Version 1: </h3> 
-<p>A single carrier is available, providing constraints 'carrier_space' and 'carrier_weight_limit'. A certain number of items are required to be transported. Items are defined by three properties: {value, weight, volume}. The goal is to maximize total value, considering space and weight constraints.</p>
+## Team Members:
+* Mashrur Mahmud
+* Hasan Tanvir Iqbal
+* Farhan M Nafis Momin
 
-<h3> Version 2: </h3>
-<p>A number of carriers are available, each having its own space and weight limit. A certain number of items require transportation. Items are defined by four properties: {value, weight, volume, carrier_index}. The goal is to maximize total value, by assigning items to carriers optimally, under weight and space constraints of those individual carriers.</p>
+## Overview:
+Cargo Optimization is a model comprised of several theoretical problem domains; it makes use of combinatorial optimization, scheduling schemes, as well as weighted paths. The figure below provides an outlook of the multifaceted nature of the optimization objective:
 
-<h3> Version 3: </h3>
-<p> The concept of destinations is introduced. Multiple destinations are available. Each item needs to be delivered to its own destination. Path costs between different locations are given. The goal is to pick items in a way such that, (total item value - travel cost) is maximized. </p>
+<img src="https://github.com/ID56/Cargo-Optimization-Minizinc/blob/master/Workflow.png">
 
-<h3> Version 4: </h3>
-<p> The concept of delay time is introduced. In all previous scenarios, an item which is sub-optimal in terms of value vs other costs would remain unchosen across many iterations as long as better items are available. However, the delay or waiting time of an item is now factored into the cost function. An item which has been waiting too long will result in an overall bad solution. So, delay cost provides a scheduling effect on the problem scenario.</p>
+## The Cargo Environment:
+The problem can be defined in the following way:
+* Items are defined by the properties value, weight and volume.
+* Each item has a specific destination.
+* Not all items are ready to be transported at the same time; they have their own arrival times.
+* A carrier has a specific amount of weight and space limit to carry items.
+* An adjacency matrix represents the graph of path costs between various destinations.
+* The amount of time an item has to wait since its arrival defines its delay.
+* Sensitivity paramters may affect the delivery; it could be time sensitive or value sensitive or on-road time sensitive.
 
+The objective is to maximize total value under the constraints, while taking travel paths and time-delay into consideration.
 
+## Previous Versions:
+We initially defined the problem in a simple manner and gradually added constraints to increase the scope and complexity.
+
+* Version 1: Simple m-dimensional knapsack problem that maximized value versus weight and volume.
+* Version 2: m-dimensional multiple knapsack problem.
+* Version 3: Added weighted path graph and introduced travelcost into the objective.
+* Version 4: Added the temporal concept of delay and arrival and departure time, adding totaldelay into the objective.
+* Final Version: Added a weighting factor to the optimization objective.
+
+## Setting up and running:
+* MiniZinc IDE must be installed.
+* Clone or download the repository.
+* Browse the project explorer, and right click the 'Data' section, and choose 'Add existing file.'
+* Select the desired data file from the data folder, named according to the corresponding version.
+* Right click on the newly added data file, and run the .mzn file with it.
