@@ -1,0 +1,9 @@
+number_of_trucks=3;
+carrier_spaces=[100,120,110];
+weight_limits=[150,145,140];
+
+% Item constraints
+number_of_items = 8;
+weights = [55,70,50,60,80,45,65,40];
+volume = [15,25,20,20,30,15,25,20];
+value = [100,105,90,85,110,90,95,105];

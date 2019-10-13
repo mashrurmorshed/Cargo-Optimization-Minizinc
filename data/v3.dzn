@@ -1,0 +1,12 @@
+carrier_space=100;
+carrier_weight_limit=150;
+
+number_of_items=5;
+weights=[55,60,70,50,45];
+volume=[20,30,15,25,20];
+value=[110,70,90,80,150];
+destinations=[2,3,3,2,4];
+
+num_dest=4;
+
+path_costs =[|0,30,10,40|30,0,20,30|10,20,0,50|40,30,50,0|];
