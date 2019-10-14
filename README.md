@@ -1,14 +1,8 @@
 # Cargo Optimization
-An advanced application of the knapsack problem, implemented in Minizinc.
+An advanced application of the knapsack problem, implemented in Minizinc. Developed as a project for CSE 4618: Artificial Intelligence.
 
 ## Tools used:
-
 * MiniZinc 2.2.3
-
-## Team Members:
-* Mashrur Mahmud
-* Hasan Tanvir Iqbal
-* Farhan M Nafis Momin
 
 ## Overview:
 Cargo Optimization is a model comprised of several theoretical problem domains; it makes use of combinatorial optimization, scheduling schemes, as well as weighted paths. The figure below provides an outlook of the multifaceted nature of the optimization objective:
